@@ -87,7 +87,10 @@ predLDA <- predict(modLDA,test)
 confusionMatrix(predLDA,test$classe)
 
 # model using random forest
-modRF <- randomForest(classe~.,data=training)
+modRF <- randomForest(classe~.,data=train)
+
+predRF1 <- predict(modRF,train)
+confusionMatrix(predRF1,train$classe)
 
 predRF <- predict(modRF,test)
 confusionMatrix(predRF,test$classe)
